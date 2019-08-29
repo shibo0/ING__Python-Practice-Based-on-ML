@@ -24,7 +24,7 @@ def readDataSet(path):
         hwLabels[i][digit]=1.0
         dataSet[i]=img2vector(path+'/'+filePath)#读取文件内容
     return  dataSet,hwLabels
-train_dataSet,train_hwLabels =readDataSet(filename)  #填入文件名
+train_dataSet,train_hwLabels =readDataSet(train_filename)  #填入train文件名
 #构建KNN分类器：设置查找算法以及邻居点 数量(k)值。
 #KNN是一种懒惰学习法，没有学习过程，只在预测时去查找最近邻的点，
 #数据集的输入就是构建KNN分类器的过程
@@ -33,7 +33,7 @@ knn.fit(train_dataSet,train_hwLabels)
 
 
 #测试集评价
-dataSet,hwlLabels =readDataSet(filename)  #填入文件名
+dataSet,hwlLabels =readDataSet(test_filename)  #填入test文件名
 res=knn.predict(dataSet) #对测试集进行预测
 error_num =np.sum(res!=hwlLabels)   #统计预测错误的数目
 num =len(dataSet) #测试集的数目
