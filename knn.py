@@ -39,7 +39,7 @@ def classify0(inX,dataSet,labels,k):
 
 if __name__ == '__main__':
     #创建数据集
-    group, labels = fileLoad(r"C:\Users\20528\Desktop\dataset.txt")
+    group, labels = fileLoad(r"...\dataset.txt") #路径
     #输入
     ffMiles = float(input("每年获得的飞行常客里程数:"))
     iceCream = float(input("每周消费的冰激淋公升数:"))
